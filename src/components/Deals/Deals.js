@@ -6,11 +6,13 @@ import React from 'react';
 const Deals = (props) => {
     return (
         <Card className="deals">
-            <FindDeals date={props.item[0].date}
-                name={props.item[0].name}
-                initial={props.item[0].initial}
-                final={props.item[0].final} />
-                
+            {props.item.map(deals => 
+            <FindDeals
+                date={deals.date}
+                name={deals.name}
+                initial={deals.initial}
+                final={deals.final} />
+            )}
         </Card>
     )
 }
